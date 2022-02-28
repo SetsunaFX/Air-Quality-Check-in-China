@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Awesome-pyecharts</title>
+            <script type="text/javascript" src="https://assets.pyecharts.org/assets/echarts.min.js"></script>
+        <script type="text/javascript" src="https://assets.pyecharts.org/assets/maps/hebei.js"></script>
+
+    
+</head>
+<body>
+        <style>
+        .tab {
+            overflow: hidden;
+            border: 1px solid #ccc;
+            background-color: #f1f1f1;
+        }
+
+        .tab button {
+            background-color: inherit;
+            float: left;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 12px 16px;
+            transition: 0.3s;
+        }
+
+        .tab button:hover {
+            background-color: #ddd;
+        }
+
+        .tab button.active {
+            background-color: #ccc;
+        }
+
+        .chart-container {
+            display: none;
+            padding: 6px 12px;
+            border-top: none;
+        }
+    </style>
+    <div class="tab">
+            <button class="tablinks" onclick="showChart(event, 'c828e822edfe4012917c0f750c862961')">PM2.5-map</button>
+            <button class="tablinks" onclick="showChart(event, '6cf2881a41574bde9686d2d71e0ca204')">PM2.5-bar</button>
+            <button class="tablinks" onclick="showChart(event, '786628835c59403385aa6f98653f1d27')">PM2.5-line</button>
+    </div>
+
+    <div class="box">
+                <div id="c828e822edfe4012917c0f750c862961" class="chart-container" style="width:900px; height:500px;"></div>
+    <script>
+        var chart_c828e822edfe4012917c0f750c862961 = echarts.init(
+            document.getElementById('c828e822edfe4012917c0f750c862961'), 'white', {renderer: 'canvas'});
+        var option_c828e822edfe4012917c0f750c862961 = {
+    "animation": true,
+    "animationThreshold": 2000,
+    "animationDuration": 1000,
+    "animationEasing": "cubicOut",
+    "animationDelay": 0,
+    "animationDurationUpdate": 300,
+    "animationEasingUpdate": "cubicOut",
+    "animationDelayUpdate": 0,
+    "color": [
+        "#c23531",
+        "#2f4554",
+        "#61a0a8",
+        "#d48265",
+        "#749f83",
+        "#ca8622",
+        "#bda29a",
+        "#6e7074",
+        "#546570",
+        "#c4ccd3",
+        "#f05b72",
+        "#ef5b9c",
+        "#f47920",
+        "#905a3d",
+        "#fab27b",
+        "#2a5caa",
+        "#444693",
+        "#726930",
+        "#b2d235",
+        "#6d8346",
+        "#ac6767",
+        "#1d953f",
+        "#6950a1",
+        "#918597"
+    ],
+    "series": [
+        {
+            "type": "map",
+            "name": "PM2.5",
+            "label": {
+                "show": true,
+                "position": "top",
+                "margin": 8
+            },
+            "mapType": "\u6cb3\u5317",
+            "data": [
+                {
+                    "name": "\u77f3\u5bb6\u5e84\u5e02",
+                    "value": 53
+                },
+                {
+                    "name": "\u5510\u5c71\u5e02",
+                    "value": 73
+                },
+                {
+                    "name": "\u79e6\u7687\u5c9b\u5e02",
+                    "value": 72
+                },
+                {
+                    "name": "\u4fdd\u5b9a\u5e02",
+                    "value": 87
+                },
+                {
+                    "name": "\u5f20\u5bb6\u53e3\u5e02",
+                    "value": 15
+                },
+                {
+                    "name": "\u90af\u90f8\u5e02",
+                    "value": 54
+                },
+                {
+                    "name": "\u90a2\u53f0\u5e02",
+                    "value": 49
+                },
+                {
+                    "name": "\u627f\u5fb7\u5e02",
+                    "value": 43
+                },
+                {
+                    "name": "\u6ca7\u5dde\u5e02",
+                    "value": 61
+                },
+                {
+                    "name": "\u5eca\u574a\u5e02",
+                    "value": 68
+                },
+                {
+                    "name": "\u8861\u6c34\u5e02",
+                    "value": 58
+                }
+            ],
+            "roam": true,
+            "aspectScale": 0.75,
+            "nameProperty": "name",
+            "selectedMode": false,
+            "zoom": 1,
+            "mapValueCalculation": "sum",
+            "showLegendSymbol": true,
+            "emphasis": {}
+        }
+    ],
+    "legend": [
+        {
+            "data": [
+                "PM2.5"
+            ],
+            "selected": {
+                "PM2.5": true
+            },
+            "show": true,
+            "padding": 5,
+            "itemGap": 10,
+            "itemWidth": 25,
+            "itemHeight": 14
+        }
+    ],
+    "tooltip": {
+        "show": true,
+        "trigger": "item",
+        "triggerOn": "mousemove|click",
+        "axisPointer": {
+            "type": "line"
+        },
+        "showContent": true,
+        "alwaysShowContent": false,
+        "showDelay": 0,
+        "hideDelay": 100,
+        "textStyle": {
+            "fontSize": 14
+        },
+        "borderWidth": 0,
+        "padding": 5
+    },
+    "title": [
+        {
+            "text": "Hebei PM2.5 concentration map",
+            "padding": 5,
+            "itemGap": 10
+        }
+    ],
+    "visualMap": {
+        "show": true,
+        "type": "piecewise",
+        "min": 0,
+        "max": 200,
+        "inRange": {
+            "color": [
+                "#50a3ba",
+                "#eac763",
+                "#d94e5d"
+            ]
+        },
+        "calculable": true,
+        "inverse": false,
+        "splitNumber": 5,
+        "orient": "vertical",
+        "showLabel": true,
+        "itemWidth": 20,
+        "itemHeight": 14,
+        "borderWidth": 0
+    }
+};
+        chart_c828e822edfe4012917c0f750c862961.setOption(option_c828e822edfe4012917c0f750c862961);
+    </script>
+                <div id="6cf2881a41574bde9686d2d71e0ca204" class="chart-container" style="width:900px; height:500px;"></div>
+    <script>
+        var chart_6cf2881a41574bde9686d2d71e0ca204 = echarts.init(
+            document.getElementById('6cf2881a41574bde9686d2d71e0ca204'), 'white', {renderer: 'canvas'});
+        var option_6cf2881a41574bde9686d2d71e0ca204 = {
+    "animation": true,
+    "animationThreshold": 2000,
+    "animationDuration": 1000,
+    "animationEasing": "cubicOut",
+    "animationDelay": 0,
+    "animationDurationUpdate": 300,
+    "animationEasingUpdate": "cubicOut",
+    "animationDelayUpdate": 0,
+    "color": [
+        "#c23531",
+        "#2f4554",
+        "#61a0a8",
+        "#d48265",
+        "#749f83",
+        "#ca8622",
+        "#bda29a",
+        "#6e7074",
+        "#546570",
+        "#c4ccd3",
+        "#f05b72",
+        "#ef5b9c",
+        "#f47920",
+        "#905a3d",
+        "#fab27b",
+        "#2a5caa",
+        "#444693",
+        "#726930",
+        "#b2d235",
+        "#6d8346",
+        "#ac6767",
+        "#1d953f",
+        "#6950a1",
+        "#918597"
+    ],
+    "series": [
+        {
+            "type": "bar",
+            "name": "PM2.5",
+            "legendHoverLink": true,
+            "data": [
+                53,
+                73,
+                72,
+                87,
+                15,
+                54,
+                49,
+                43,
+                61,
+                68,
+                58
+            ],
+            "showBackground": false,
+            "barMinHeight": 0,
+            "barCategoryGap": "20%",
+            "barGap": "30%",
+            "large": false,
+            "largeThreshold": 400,
+            "seriesLayoutBy": "column",
+            "datasetIndex": 0,
+            "clip": true,
+            "zlevel": 0,
+            "z": 2,
+            "label": {
+                "show": true,
+                "position": "top",
+                "margin": 8
+            }
+        }
+    ],
+    "legend": [
+        {
+            "data": [
+                "PM2.5"
+            ],
+            "selected": {
+                "PM2.5": true
+            },
+            "show": true,
+            "padding": 5,
+            "itemGap": 10,
+            "itemWidth": 25,
+            "itemHeight": 14
+        }
+    ],
+    "tooltip": {
+        "show": true,
+        "trigger": "item",
+        "triggerOn": "mousemove|click",
+        "axisPointer": {
+            "type": "line"
+        },
+        "showContent": true,
+        "alwaysShowContent": false,
+        "showDelay": 0,
+        "hideDelay": 100,
+        "textStyle": {
+            "fontSize": 14
+        },
+        "borderWidth": 0,
+        "padding": 5
+    },
+    "xAxis": [
+        {
+            "show": true,
+            "scale": false,
+            "nameLocation": "end",
+            "nameGap": 15,
+            "gridIndex": 0,
+            "inverse": false,
+            "offset": 0,
+            "splitNumber": 5,
+            "minInterval": 0,
+            "splitLine": {
+                "show": false,
+                "lineStyle": {
+                    "show": true,
+                    "width": 1,
+                    "opacity": 1,
+                    "curveness": 0,
+                    "type": "solid"
+                }
+            },
+            "data": [
+                "\u77f3\u5bb6\u5e84",
+                "\u5510\u5c71",
+                "\u79e6\u7687\u5c9b",
+                "\u4fdd\u5b9a",
+                "\u5f20\u5bb6\u53e3",
+                "\u90af\u90f8",
+                "\u90a2\u53f0",
+                "\u627f\u5fb7",
+                "\u6ca7\u5dde",
+                "\u5eca\u574a",
+                "\u8861\u6c34"
+            ]
+        }
+    ],
+    "yAxis": [
+        {
+            "show": true,
+            "scale": false,
+            "nameLocation": "end",
+            "nameGap": 15,
+            "gridIndex": 0,
+            "inverse": false,
+            "offset": 0,
+            "splitNumber": 5,
+            "minInterval": 0,
+            "splitLine": {
+                "show": false,
+                "lineStyle": {
+                    "show": true,
+                    "width": 1,
+                    "opacity": 1,
+                    "curveness": 0,
+                    "type": "solid"
+                }
+            }
+        }
+    ],
+    "title": [
+        {
+            "text": "PM2.5 histogram",
+            "padding": 5,
+            "itemGap": 10
+        }
+    ],
+    "dataZoom": [
+        {
+            "show": true,
+            "type": "slider",
+            "realtime": true,
+            "start": 20,
+            "end": 80,
+            "orient": "horizontal",
+            "zoomLock": false,
+            "filterMode": "filter"
+        }
+    ]
+};
+        chart_6cf2881a41574bde9686d2d71e0ca204.setOption(option_6cf2881a41574bde9686d2d71e0ca204);
+    </script>
+                <div id="786628835c59403385aa6f98653f1d27" class="chart-container" style="width:900px; height:500px;"></div>
+    <script>
+        var chart_786628835c59403385aa6f98653f1d27 = echarts.init(
+            document.getElementById('786628835c59403385aa6f98653f1d27'), 'white', {renderer: 'canvas'});
+        var option_786628835c59403385aa6f98653f1d27 = {
+    "animation": true,
+    "animationThreshold": 2000,
+    "animationDuration": 1000,
+    "animationEasing": "cubicOut",
+    "animationDelay": 0,
+    "animationDurationUpdate": 300,
+    "animationEasingUpdate": "cubicOut",
+    "animationDelayUpdate": 0,
+    "color": [
+        "#c23531",
+        "#2f4554",
+        "#61a0a8",
+        "#d48265",
+        "#749f83",
+        "#ca8622",
+        "#bda29a",
+        "#6e7074",
+        "#546570",
+        "#c4ccd3",
+        "#f05b72",
+        "#ef5b9c",
+        "#f47920",
+        "#905a3d",
+        "#fab27b",
+        "#2a5caa",
+        "#444693",
+        "#726930",
+        "#b2d235",
+        "#6d8346",
+        "#ac6767",
+        "#1d953f",
+        "#6950a1",
+        "#918597"
+    ],
+    "series": [
+        {
+            "type": "line",
+            "name": "PM2.5",
+            "connectNulls": false,
+            "symbol": "emptyCircle",
+            "symbolSize": 4,
+            "showSymbol": true,
+            "smooth": false,
+            "clip": true,
+            "step": false,
+            "data": [
+                [
+                    "\u77f3\u5bb6\u5e84",
+                    53
+                ],
+                [
+                    "\u5510\u5c71",
+                    73
+                ],
+                [
+                    "\u79e6\u7687\u5c9b",
+                    72
+                ],
+                [
+                    "\u4fdd\u5b9a",
+                    87
+                ],
+                [
+                    "\u5f20\u5bb6\u53e3",
+                    15
+                ],
+                [
+                    "\u90af\u90f8",
+                    54
+                ],
+                [
+                    "\u90a2\u53f0",
+                    49
+                ],
+                [
+                    "\u627f\u5fb7",
+                    43
+                ],
+                [
+                    "\u6ca7\u5dde",
+                    61
+                ],
+                [
+                    "\u5eca\u574a",
+                    68
+                ],
+                [
+                    "\u8861\u6c34",
+                    58
+                ]
+            ],
+            "hoverAnimation": true,
+            "label": {
+                "show": true,
+                "position": "top",
+                "margin": 8
+            },
+            "lineStyle": {
+                "show": true,
+                "width": 1,
+                "opacity": 1,
+                "curveness": 0,
+                "type": "solid"
+            },
+            "areaStyle": {
+                "opacity": 0
+            },
+            "zlevel": 0,
+            "z": 0
+        }
+    ],
+    "legend": [
+        {
+            "data": [
+                "PM2.5"
+            ],
+            "selected": {
+                "PM2.5": true
+            },
+            "show": true,
+            "padding": 5,
+            "itemGap": 10,
+            "itemWidth": 25,
+            "itemHeight": 14
+        }
+    ],
+    "tooltip": {
+        "show": false,
+        "trigger": "item",
+        "triggerOn": "mousemove|click",
+        "axisPointer": {
+            "type": "line"
+        },
+        "showContent": true,
+        "alwaysShowContent": false,
+        "showDelay": 0,
+        "hideDelay": 100,
+        "textStyle": {
+            "fontSize": 14
+        },
+        "borderWidth": 0,
+        "padding": 5
+    },
+    "xAxis": [
+        {
+            "type": "category",
+            "show": true,
+            "scale": false,
+            "nameLocation": "end",
+            "nameGap": 15,
+            "gridIndex": 0,
+            "inverse": false,
+            "offset": 0,
+            "splitNumber": 5,
+            "minInterval": 0,
+            "splitLine": {
+                "show": false,
+                "lineStyle": {
+                    "show": true,
+                    "width": 1,
+                    "opacity": 1,
+                    "curveness": 0,
+                    "type": "solid"
+                }
+            },
+            "data": [
+                "\u77f3\u5bb6\u5e84",
+                "\u5510\u5c71",
+                "\u79e6\u7687\u5c9b",
+                "\u4fdd\u5b9a",
+                "\u5f20\u5bb6\u53e3",
+                "\u90af\u90f8",
+                "\u90a2\u53f0",
+                "\u627f\u5fb7",
+                "\u6ca7\u5dde",
+                "\u5eca\u574a",
+                "\u8861\u6c34"
+            ]
+        }
+    ],
+    "yAxis": [
+        {
+            "type": "value",
+            "show": true,
+            "scale": false,
+            "nameLocation": "end",
+            "nameGap": 15,
+            "gridIndex": 0,
+            "axisTick": {
+                "show": true,
+                "alignWithLabel": false,
+                "inside": false
+            },
+            "inverse": false,
+            "offset": 0,
+            "splitNumber": 5,
+            "minInterval": 0,
+            "splitLine": {
+                "show": true,
+                "lineStyle": {
+                    "show": true,
+                    "width": 1,
+                    "opacity": 1,
+                    "curveness": 0,
+                    "type": "solid"
+                }
+            }
+        }
+    ],
+    "title": [
+        {
+            "padding": 5,
+            "itemGap": 10
+        }
+    ]
+};
+        chart_786628835c59403385aa6f98653f1d27.setOption(option_786628835c59403385aa6f98653f1d27);
+    </script>
+    </div>
+
+    <script>
+    </script>
+    <script>
+        (function() {
+            containers = document.getElementsByClassName("chart-container");
+            if(containers.length > 0) {
+                containers[0].style.display = "block";
+            }
+        })()
+
+        function showChart(evt, chartID) {
+            let containers = document.getElementsByClassName("chart-container");
+            for (let i = 0; i < containers.length; i++) {
+                containers[i].style.display = "none";
+            }
+
+            let tablinks = document.getElementsByClassName("tablinks");
+            for (let i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = "tablinks";
+            }
+
+            document.getElementById(chartID).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+    </script>
+</body>
+</html>
